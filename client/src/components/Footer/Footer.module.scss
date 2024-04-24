@@ -1,0 +1,24 @@
+.footer{
+  background-color: black;
+  display: flex;
+  flex-direction: row-reverse;
+  height: 70px;
+  padding: 20px;
+}
+
+.icon{
+  width: 25px; 
+  height: 25px;
+  border-radius: 50%; 
+  object-fit: cover;
+}
+
+.media{
+  display: flex;
+  align-items: flex-end;
+}
+
+.media
+a{
+  margin: 10px;
+}

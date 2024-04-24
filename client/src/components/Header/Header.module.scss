@@ -1,0 +1,49 @@
+.hero{
+  border-bottom: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10px;
+  background-color: black;
+}
+
+.nav
+  ul{
+  display: flex;
+  padding: 0;
+  margin: 0;
+  
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+  }
+}
+
+.link{
+  list-style-type: none;
+  margin: 10px;  
+}
+
+.link
+  a{
+    text-decoration: none;
+    font-size: 15px;
+    color: aliceblue;
+
+    @media screen and (max-width: 768px) {
+      font-size: 12px; 
+    }
+  }
+
+
+  .hero
+    h1{
+    color: aliceblue;
+
+    @media screen and (max-width: 768px) {
+      font-size: 30px; 
+    }
+  }

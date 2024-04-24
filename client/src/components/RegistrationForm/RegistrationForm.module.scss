@@ -1,0 +1,28 @@
+.error{
+  max-width: 200px;
+  min-height: 20px;
+  background-color: red;
+  color: aliceblue;
+}
+
+.imput{
+  margin: 5px;
+  padding: 2px;
+  width: 250px;
+  height: 30px;
+}
+.form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.submit{
+  display: flex;
+  margin: 5px;
+  padding: 2px;
+  width: 250px;
+  height: 30px;
+}
