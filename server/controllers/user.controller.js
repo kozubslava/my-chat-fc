@@ -10,7 +10,7 @@ module.exports.createUser = async (req, res, next) => {
     next(error);
   }
 };
-rs
+
 
 module.exports.findUser = async (req, res, next) => {
   try {

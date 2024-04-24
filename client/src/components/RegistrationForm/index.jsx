@@ -18,6 +18,8 @@ import styles from "./RegistrationForm.module.scss"
   };
   
   const RegistrationForm = (props) => {
+    
+
     const handleSubmit = (values, formikBag) => {
       const {gender, ...restUser} = values;
 
