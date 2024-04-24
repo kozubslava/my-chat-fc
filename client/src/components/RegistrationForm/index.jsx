@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Form, Formik, Field, ErrorMessage } from "formik"
 import {createUser} from "../../api"
 import { USER_REGISTRATION_SCHEMA } from "../../utils/validation";
 import styles from "./RegistrationForm.module.scss"
+import UserContext from "../../contexts/userContext";
 
 
 
@@ -18,7 +19,7 @@ import styles from "./RegistrationForm.module.scss"
   };
   
   const RegistrationForm = (props) => {
-    
+    const[user, setUser] = useContext(UserContext);
 
     const handleSubmit = (values, formikBag) => {
       const {gender, ...restUser} = values;
@@ -28,8 +29,9 @@ import styles from "./RegistrationForm.module.scss"
         isMale: gender === 'male',
       };
         
-      const respons =  createUser(newUserData).then((response) => {
-        console.log(respons);
+      createUser(newUserData).then((response) => {
+        
+        setUser(response.data.data);
       });
 
       
@@ -41,7 +43,7 @@ import styles from "./RegistrationForm.module.scss"
   return(
   <Formik
   initialValues={initialValues}
-      // validationSchema={USER_REGISTRATION_SCHEMA}
+      validationSchema={USER_REGISTRATION_SCHEMA}
       onSubmit={handleSubmit}>
     <Form className={styles.form}> 
       <div >

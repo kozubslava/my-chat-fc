@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-// const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 // const { SALT_ROUNDS } = require('../constants');
 
 const userSchema = new Schema(
@@ -26,12 +26,14 @@ const userSchema = new Schema(
       type: String,
       required: [true, 'password field is required'],
       minlength: [8, 'password field cannot be smaller then 8 symbols'],
-    //   set: (password) => {
-    //     // перед внесенням даних про пароль отримуємо його хеш
-    //     const hashedPassword = bcrypt.hashSync(password, SALT_ROUNDS);
-    //     // та зберігаємо саме хеш у БД
-    //     return hashedPassword;
-    //   },
+      set: async (password) => {
+
+
+        // перед внесенням даних про пароль отримуємо його хеш
+        const hashedPassword = bcrypt.hashSync(password, SALT_ROUNDS);
+        // та зберігаємо саме хеш у БД
+        return hashedPassword;
+      },
     },
     isMale: { type: Boolean },
   },
