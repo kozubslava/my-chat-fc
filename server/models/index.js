@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const dbConfig = require("../configs/mongo.json");
 const User = require("./user");
+const Chat = require("./chat");
 
 async function connectToDb() {
   await mongoose.connect(dbConfig.CONNECTION_STRING);
@@ -11,3 +12,4 @@ connectToDb().catch((err) => {
 });
 
 module.exports = { User };
+module.exports = { Chat };
