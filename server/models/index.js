@@ -11,5 +11,5 @@ connectToDb().catch((err) => {
   process.exit(1);
 });
 
-module.exports = { User };
-module.exports = { Chat };
+module.exports = { User, Chat};
+// module.exports = { Chat };

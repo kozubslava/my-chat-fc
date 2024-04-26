@@ -1,0 +1,11 @@
+POST http://localhost:5000/auth/registration
+Content-Type: application/json
+
+{
+  "firstName": "Jo",
+  "lastName": "Gl",
+  "email": "1jon@mail.com",
+  "password": "12345678",
+  "passwordRepeat": "12345678",
+  "isMale": true
+}
