@@ -1,5 +1,6 @@
 const userRouter = require('express').Router();
 const UserController = require('../controllers/user.controller');
+const { validateUserUpdate } = require('../middlewares/user.mw');
 
 userRouter.route('/')
   .post(UserController.createUser)
@@ -7,7 +8,7 @@ userRouter.route('/')
 
 userRouter.route('/:userId') 
   .get(UserController.findUser)
-  .put(UserController.updateUser)
+  .put(validateUserUpdate ,UserController.updateUser)
   .delete(UserController.deleteUser);
 
 module.exports = userRouter;
