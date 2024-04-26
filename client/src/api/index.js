@@ -4,11 +4,13 @@ const httpClient = axios.create({
   baseURL: 'http://localhost:5000'
 })
 
-export async function createUser (userData) {
-  const response = await httpClient.post('/users', userData);
+export async function registration (userData) {
+  const response = await httpClient.post('/auth/registration', userData);
 
   return response;
 }
+
+export  const login  = (loginData) => httpClient.post ('/auth/login', loginData);
 
 export async function gteUser (userId) {
   const response = await httpClient.get(`users/${userId}`);

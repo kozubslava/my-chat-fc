@@ -22,6 +22,9 @@ function Header (params) {
       <div className={styles.link}>
         <Link  to='/registration'>Registration</Link>
       </div>
+      <div className={styles.link}>
+        <Link  to='/login'>Login</Link>
+      </div>
       
     </header>
   );

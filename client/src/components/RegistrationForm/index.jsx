@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import { Form, Formik, Field, ErrorMessage } from "formik"
-import {createUser} from "../../api"
+import {registration} from "../../api"
 import { USER_REGISTRATION_SCHEMA } from "../../utils/validation";
 import styles from "./RegistrationForm.module.scss"
 import UserContext from "../../contexts/userContext";
@@ -21,7 +21,7 @@ import UserContext from "../../contexts/userContext";
   const RegistrationForm = (props) => {
     const[user, setUser] = useContext(UserContext);
 
-    const handleSubmit = (values, formikBag) => {
+    const handleSubmit = async(values, formikBag) => {
       const {gender, ...restUser} = values;
 
       const newUserData = {
@@ -29,15 +29,11 @@ import UserContext from "../../contexts/userContext";
         isMale: gender === 'male',
       };
         
-      createUser(newUserData).then((response) => {
-        
-        setUser(response.data.data);
-      });
-
+      const response = await registration(newUserData);
       
-
+      setUser(response.data.data);
+      
       formikBag.resetForm();
-      
     };
 
   return(

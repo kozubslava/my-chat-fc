@@ -5,6 +5,7 @@ import ProfilePage from "./pages/ProfilePage";
 import RegistrationPage from "./pages/RegistrationPage";
 import UserContext from "./contexts/userContext";
 import UsersPage from "./pages/Users";
+import LoginPage from "./pages/Login";
 
 
 // const userMocData = {
@@ -26,7 +27,9 @@ const [user, setUser] = useState(null)
         <Route exact path = '/' component={HomePage} />;
         <Route exact path = '/profile' component={ProfilePage} />
         <Route exact path = '/registration' component={RegistrationPage}/>
+        <Route exact path = '/login' component={LoginPage}/>
         <Route exact path = '/users' component={UsersPage}/>
+
       </Switch>
     </UserContext.Provider>
   );

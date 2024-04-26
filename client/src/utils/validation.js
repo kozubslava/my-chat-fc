@@ -20,6 +20,12 @@ export const USER_REGISTRATION_SCHEMA = yup.object({
   confirm_password: CONFIRM_PASSWORD_SCHEMA. required(),
 });
 
+
+export const USER_LOGIN_SCHEMA = yup.object({
+  email: EMAIL_SCHEMA.required(),
+  password: PASSWORD_SCHEMA.required(),
+})
+
 export const USER_UPDATE_SCHEMA = yup.object({
   imgSrc: yup.string().url(),
   firstName: NAME_SCHEMA,
