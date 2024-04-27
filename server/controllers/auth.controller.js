@@ -8,9 +8,9 @@ module.exports.registration = async (req, res, next) => {
     const user = await User.create(body);
     
 
-    // const userWithoutPassword = prepearUser(user);
-    // res.status(201).send({ data: userWithoutPassword });
-    res.status(201).send({ data: user });
+    const userWithoutPassword = prepearUser(user);
+    res.status(201).send({ data: userWithoutPassword });
+    
   } catch (error) {
     next(error);
   }
@@ -33,9 +33,9 @@ module.exports.login = async (req, res, next) => {
     if (!isSamePassword) throw new Error("Invalid login or password");
 
 
-    // const userWithoutPassword = prepearUser(user);
-    // res.status(201).send({ data: userWithoutPassword });
-    res.status(201).send({ data: user });
+    const userWithoutPassword = prepearUser(user);
+    res.status(201).send({ data: userWithoutPassword });
+    
   } catch (error) {
     next(error);
   }
