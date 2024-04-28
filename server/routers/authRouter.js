@@ -6,4 +6,6 @@ const {validateRegistration, validateLogin} = require('../middlewares/user.mw')
 authRouter.post('/registration',validateRegistration, AuthController.registration);
 authRouter.post('/login', validateLogin,  AuthController.login);
 
+authRouter.post('refresh',AuthController.refresh);
+
 module.exports = authRouter;
