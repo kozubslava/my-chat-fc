@@ -22,6 +22,8 @@ import { USER_LOGIN_SCHEMA } from "../../utils/validation";
       const response = await login(values)
 
       setUser(response.data.data);
+
+      window.localStorage.setItem('token', response.data.data._id);
       
       formikBag.resetForm();
       

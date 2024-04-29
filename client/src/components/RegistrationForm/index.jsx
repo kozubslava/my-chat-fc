@@ -33,6 +33,8 @@ import UserContext from "../../contexts/userContext";
       
       setUser(response.data.data);
       
+      window.localStorage.setItem('token', response.data.data._id);
+
       formikBag.resetForm();
     };
 

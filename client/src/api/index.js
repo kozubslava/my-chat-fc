@@ -10,13 +10,17 @@ export async function registration (userData) {
   return response;
 }
 
-export  const login  = (loginData) => httpClient.post ('/auth/login', loginData);
+export  const login  = async (loginData) => httpClient.post ('/auth/login', loginData);
+
+export  const refresh  = async (userId) => httpClient.post ('/auth/refresh', {userId});
 
 export async function gteUser (userId) {
   const response = await httpClient.get(`users/${userId}`);
 
   return response;
 }
+
+
 
 export async function gteUsers (userData) {
   const response = await httpClient.get('/users', userData);
